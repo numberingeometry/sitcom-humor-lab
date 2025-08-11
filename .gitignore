@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints/
+.venv/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data: keep raw/large files out of git
+/data/raw/
+/data/*.csv
+/data/processed/*.csv
+!data/processed/README.keep   # keep folder
