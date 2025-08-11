@@ -9,8 +9,8 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Data: keep raw/large files out of git
+# Data: keep raw files out of git
 /data/raw/
-/data/*.csv
-/data/processed/*.csv
+# /data/*.csv
+# /data/processed/*.csv
 !data/processed/README.keep   # keep folder
