@@ -1,0 +1,27 @@
+/* Minimal, clean UI */
+:root { --bg:#0b0c10; --card:#121318; --text:#e5e7eb; --muted:#9aa0a6; --accent:#7dd3fc; }
+
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; background:var(--bg); color:var(--text); font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+
+header { padding:32px 16px 8px; text-align:center; }
+h1 { margin:0; font-size:2rem; letter-spacing:0.5px; }
+.tagline { color:var(--muted); margin-top:6px; }
+
+main { max-width:1100px; margin:20px auto 64px; padding:0 16px; }
+.card { background:var(--card); border:1px solid #1e212a; border-radius:16px; padding:16px 18px; margin:12px 0; box-shadow:0 10px 30px rgba(0,0,0,.25); }
+
+.grid { display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .grid { grid-template-columns:1fr 1fr; }}
+
+h2, h3 { margin:6px 0 10px; }
+.plot { width:100%; height:400px; }
+
+details { margin-top:8px; color:var(--muted); }
+summary { cursor:pointer; }
+
+.note { color:var(--accent); }
+
+footer { text-align:center; color:var(--muted); padding:24px 0 40px; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }

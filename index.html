@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sitcom Humor Lab — SoME MVP</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.plot.ly/plotly-2.32.0.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Sitcom Humor Lab</h1>
+    <p class="tagline">Quantifying “funny” with simple, teachable math.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Project Overview</h2>
+      <p>
+        This site presents a SoME-ready MVP analyzing a sitcom’s episodes using
+        <strong>audience ratings</strong>, <strong>joke density proxies</strong>, and <strong>sentiment</strong> (coming soon).
+        All data loads client-side from the repository. No backend required.
+      </p>
+      <p class="note">Tip: If you don’t see charts, ensure the CSV paths exist in your repo (see README) or open this site via GitHub Pages.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>Figure 1 — Ratings Over Time</h3>
+        <div id="ratings-trend" class="plot"></div>
+        <details>
+          <summary>What’s the math?</summary>
+          <ul>
+            <li><strong>Smoothing:</strong> A simple moving average highlights trend over noise.</li>
+            <li><strong>Normalization:</strong> Episodes are ordered by a global index across seasons.</li>
+          </ul>
+        </details>
+      </article>
+
+      <article class="card">
+        <h3>Figure 2 — Joke Density vs Rating (Pilot)</h3>
+        <div id="joke-scatter" class="plot"></div>
+        <details>
+          <summary>What’s the math?</summary>
+          <ul>
+            <li><strong>Proxy features:</strong> SDH “[laughter]” events/min or transcript punchline heuristics.</li>
+            <li><strong>Correlation:</strong> Pearson r quantifies co-movement (not causation!).</li>
+          </ul>
+        </details>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Methods (MVP)</h2>
+      <ol>
+        <li><strong>Ratings:</strong> Pulled from OMDb/IMDb and cleaned into <code>data/processed/imdb_ratings.csv</code>.</li>
+        <li><strong>Joke density (pilot):</strong> Either SDH laughter tags per minute or transcript-based proxies.</li>
+        <li><strong>Join:</strong> Merge features by (season, episode), visualize trends and scatterplots.</li>
+      </ol>
+      <p class="disclaimer">Educational focus: smoothing, correlation, and normalization. Post‑SoME will add sentiment and character networks.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Sitcom Humor Lab • Built with HTML + JS • Deployed on GitHub Pages</p>
+  </footer>
+</body>
+</html>
