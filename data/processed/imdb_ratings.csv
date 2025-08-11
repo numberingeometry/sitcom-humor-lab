@@ -1,0 +1,281 @@
+season,episode,title,imdb_rating,released,imdb_id
+1,1,Pilot,8.1,2007-09-24,tt0775431
+1,2,The Big Bran Hypothesis,8.2,2007-10-01,tt1091289
+1,3,The Fuzzy Boots Corollary,7.6,2007-10-08,tt1091290
+1,4,The Luminous Fish Effect,8.0,2007-10-15,tt1091291
+1,5,The Hamburger Postulate,7.8,2007-10-22,tt1091292
+1,6,The Middle Earth Paradigm,8.3,2007-10-29,tt1091293
+1,7,The Dumpling Paradox,8.1,2007-11-05,tt1136041
+1,8,The Grasshopper Experiment,8.1,2007-11-12,tt1127389
+1,9,The Cooper-Hofstadter Polarization,7.9,2008-03-17,tt1127390
+1,10,The Loobenfeld Decay,8.0,2008-03-24,tt1127384
+1,11,The Pancake Batter Anomaly,8.2,2008-03-31,tt1127385
+1,12,The Jerusalem Duality,7.8,2008-04-14,tt1127386
+1,13,The Bat Jar Conjecture,8.2,2008-04-21,tt1127387
+1,14,The Nerdvana Annihilation,N/A,2008-04-28,tt1127905
+1,15,The Pork Chop Indeterminacy,8.2,2008-05-05,tt1127906
+1,16,The Peanut Reaction,8.3,2008-05-12,tt1127907
+1,17,The Tangerine Factor,8.5,2008-05-19,tt1127908
+2,1,The Bad Fish Paradigm,8.2,2008-09-22,tt1256599
+2,2,The Codpiece Topology,8.0,2008-09-29,tt1256030
+2,3,The Barbarian Sublimation,8.7,2008-10-06,tt1256034
+2,4,The Griffin Equivalency,7.9,2008-10-13,tt1256035
+2,5,The Euclid Alternative,8.3,2008-10-20,tt1256036
+2,6,The Cooper-Nowitzki Theorem,8.2,2008-11-03,tt1256037
+2,7,The Panty Piñata Polarization,8.6,2008-11-10,tt1256038
+2,8,The Lizard-Spock Expansion,8.0,2008-11-17,tt1256039
+2,9,The White Asparagus Triangulation,8.1,2008-11-24,tt1256040
+2,10,The Vartabedian Conundrum,7.6,2008-12-08,tt1256020
+2,11,The Bath Item Gift Hypothesis,9.1,2008-12-15,tt1256021
+2,12,The Killer Robot Instability,N/A,2009-01-12,tt1256022
+2,13,The Friendship Algorithm,7.9,2009-01-19,tt1256023
+2,14,The Financial Permeability,8.0,2009-02-02,tt1256024
+2,15,The Maternal Capacitance,8.8,2009-02-09,tt1256025
+2,16,The Cushion Saturation,8.1,2009-03-02,tt1256026
+2,17,The Terminator Decoupling,8.0,2009-03-09,tt1256027
+2,18,The Work Song Nanocluster,8.1,2009-03-16,tt1256028
+2,19,The Dead Hooker Juxtaposition,8.1,2009-03-30,tt1256029
+2,20,The Hofstadter Isotope,7.9,2009-04-13,tt1256031
+2,21,The Vegas Renormalization,8.5,2009-04-27,tt1256032
+2,22,The Classified Materials Turbulence,8.1,2009-05-04,tt1256033
+2,23,The Monopolar Expedition,8.2,2009-05-11,tt1426233
+3,1,The Electric Can Opener Fluctuation,8.3,2009-09-21,tt1487706
+3,2,The Jiminy Conjecture,7.7,2009-09-28,tt1495238
+3,3,The Gothowitz Deviation,8.1,2009-10-05,tt1494210
+3,4,The Pirate Solution,8.0,2009-10-12,tt1523181
+3,5,The Creepy Candy Coating Corollary,8.3,2009-10-19,tt1528188
+3,6,The Cornhusker Vortex,7.4,2009-11-02,tt1523180
+3,7,The Guitarist Amplification,7.7,2009-11-09,tt1535334
+3,8,The Adhesive Duck Deficiency,8.9,2009-11-16,tt1536922
+3,9,The Vengeance Formulation,8.3,2009-11-23,tt1544819
+3,10,The Gorilla Experiment,8.4,2009-12-07,tt1558529
+3,11,The Maternal Congruence,8.2,2009-12-14,tt1558530
+3,12,The Psychic Vortex,8.2,2010-01-11,tt1567073
+3,13,The Bozeman Reaction,8.0,2010-01-18,tt1570312
+3,14,The Einstein Approximation,8.4,2010-02-01,tt1588684
+3,15,The Large Hadron Collision,8.0,2010-02-08,tt1589887
+3,16,The Excelsior Acquisition,8.2,2010-03-01,tt1592080
+3,17,The Precious Fragmentation,8.4,2010-03-08,tt1607974
+3,18,The Pants Alternative,8.4,2010-03-22,tt1609715
+3,19,The Wheaton Recurrence,7.8,2010-04-12,tt1609410
+3,20,The Spaghetti Catalyst,8.1,2010-05-03,tt1628617
+3,21,The Plimpton Stimulation,8.1,2010-05-10,tt1648755
+3,22,The Staircase Implementation,9.0,2010-05-17,tt1648756
+3,23,The Lunar Excitation,8.6,2010-05-24,tt1627740
+4,1,The Robotic Manipulation,8.7,2010-09-23,tt1632224
+4,2,The Cruciferous Vegetable Amplification,8.3,2010-09-30,tt1632235
+4,3,The Zazzy Substitution,7.9,2010-10-07,tt1632240
+4,4,The Hot Troll Deviation,8.0,2010-10-14,tt1632241
+4,5,The Desperation Emanation,7.6,2010-10-21,tt1632242
+4,6,The Irish Pub Formulation,8.0,2010-10-28,tt1632243
+4,7,The Apology Insufficiency,8.0,2010-11-04,tt1632244
+4,8,The 21-Second Excitation,8.1,2010-11-11,tt1632245
+4,9,The Boyfriend Complexity,8.4,2010-11-18,tt1632246
+4,10,The Alien Parasite Hypothesis,7.6,2010-12-09,tt1632225
+4,11,The Justice League Recombination,8.6,2010-12-16,tt1632226
+4,12,The Bus Pants Utilization,7.5,2011-01-06,tt1632227
+4,13,The Love Car Displacement,8.2,2011-01-20,tt1632228
+4,14,The Thespian Catalyst,7.7,2011-02-03,tt1632229
+4,15,The Benefactor Factor,7.7,2011-02-10,tt1632230
+4,16,The Cohabitation Formulation,7.8,2011-02-17,tt1632231
+4,17,The Toast Derivation,7.9,2011-02-24,tt1632232
+4,18,The Prestidigitation Approximation,8.1,2011-03-10,tt1632233
+4,19,The Zarnecki Incursion,8.0,2011-03-31,tt1632234
+4,20,The Herb Garden Germination,8.2,2011-04-07,tt1632236
+4,21,The Agreement Dissection,8.2,2011-04-28,tt1632237
+4,22,The Wildebeest Implementation,7.7,2011-05-05,tt1632238
+4,23,The Engagement Reaction,8.0,2011-05-12,tt1632239
+4,24,The Roommate Transmogrification,8.5,2011-05-19,tt1918407
+5,1,The Skank Reflex Analysis,8.0,2011-09-22,tt1980710
+5,2,The Infestation Hypothesis,8.0,2011-09-22,tt2033019
+5,3,The Pulled Groin Extrapolation,7.6,2011-09-29,tt2057241
+5,4,The Wiggly Finger Catalyst,7.8,2011-10-06,tt2058495
+5,5,The Russian Rocket Reaction,8.0,2011-10-13,tt2063481
+5,6,The Rhinitis Revelation,7.5,2011-10-20,tt2079337
+5,7,The Good Guy Fluctuation,8.5,2011-10-27,tt2082016
+5,8,The Isolation Permutation,7.6,2011-11-03,tt2092310
+5,9,The Ornithophobia Diffusion,8.1,2011-11-10,tt2100287
+5,10,The Flaming Spittoon Acquisition,7.9,2011-11-17,tt2105978
+5,11,The Speckerman Recurrence,7.3,2011-12-08,tt2119890
+5,12,The Shiny Trinket Maneuver,7.6,2012-01-12,tt2136314
+5,13,The Recombination Hypothesis,8.1,2012-01-19,tt2139151
+5,14,The Beta Test Initiation,8.2,2012-01-26,tt2181587
+5,15,The Friendship Contraction,7.7,2012-02-02,tt2192687
+5,16,The Vacation Solution,7.5,2012-02-09,tt2209665
+5,17,The Rothman Disintegration,7.8,2012-02-16,tt2220955
+5,18,The Werewolf Transformation,8.2,2012-02-23,tt2238153
+5,19,The Weekend Vortex,8.1,2012-03-08,tt2275203
+5,20,The Transporter Malfunction,8.1,2012-03-29,tt2275201
+5,21,The Hawking Excitation,8.5,2012-04-05,tt2300453
+5,22,The Stag Convergence,7.7,2012-04-26,tt2332311
+5,23,The Launch Acceleration,8.1,2012-05-03,tt2372043
+5,24,The Countdown Reflection,8.5,2012-05-10,tt2379487
+6,1,The Date Night Variable,7.6,2012-09-27,tt2194640
+6,2,The Decoupling Fluctuation,7.6,2012-10-04,tt2392630
+6,3,The Higgs Boson Observation,7.9,2012-10-11,tt2378184
+6,4,The Re-Entry Minimization,8.2,2012-10-18,tt2411550
+6,5,The Holographic Excitation,8.0,2012-10-25,tt2411582
+6,6,The Extract Obliteration,7.8,2012-11-01,tt2450064
+6,7,The Habitation Configuration,7.6,2012-11-08,tt2462410
+6,8,The 43 Peculiarity,8.4,2012-11-15,tt2502436
+6,9,The Parking Spot Escalation,8.2,2012-11-29,tt2505340
+6,10,The Fish Guts Displacement,8.0,2012-12-06,tt2523744
+6,11,The Santa Simulation,7.8,2012-12-13,tt2559784
+6,12,The Egg Salad Equivalency,8.4,2013-01-03,tt2571320
+6,13,The Bakersfield Expedition,8.4,2013-01-10,tt2582488
+6,14,The Cooper/Kripke Inversion,7.7,2013-01-31,tt2636834
+6,15,The Spoiler Alert Segmentation,8.2,2013-02-07,tt2633894
+6,16,The Tangible Affection Proof,7.8,2013-02-14,tt2668846
+6,17,The Monster Isolation,7.6,2013-02-21,tt2697398
+6,18,The Contractual Obligation Implementation,7.7,2013-03-07,tt2708314
+6,19,The Closet Reconfiguration,8.1,2013-03-14,tt2739286
+6,20,The Tenure Turbulence,8.0,2013-04-04,tt2784494
+6,21,The Closure Alternative,8.0,2013-04-25,tt2833366
+6,22,The Proton Resurgence,7.9,2013-05-02,tt2833352
+6,23,The Love Spell Potential,8.1,2013-05-09,tt2852720
+6,24,The Bon Voyage Reaction,7.7,2013-05-16,tt2891288
+7,1,The Hofstadter Insufficiency,7.7,2013-09-26,tt3111660
+7,2,The Deception Verification,7.9,2013-09-26,tt2933998
+7,3,The Scavenger Vortex,8.7,2013-10-03,tt3218670
+7,4,The Raiders Minimization,7.8,2013-10-10,tt3221722
+7,5,The Workplace Proximity,7.6,2013-10-17,tt3229392
+7,6,The Romance Resonance,8.4,2013-10-24,tt3229394
+7,7,The Proton Displacement,7.7,2013-11-07,tt3229396
+7,8,The Itchy Brain Simulation,7.5,2013-11-14,tt3303726
+7,9,The Thanksgiving Decoupling,8.8,2013-11-21,tt3309570
+7,10,The Discovery Dissipation,7.6,2013-12-05,tt3338358
+7,11,The Cooper Extraction,N/A,2013-12-12,tt3337724
+7,12,The Hesitation Ramification,7.4,2014-01-02,tt3337728
+7,13,The Occupation Recalibration,7.5,2014-01-09,tt3337730
+7,14,The Convention Conundrum,8.0,2014-01-30,tt3453320
+7,15,The Locomotive Manipulation,8.2,2014-02-06,tt3477310
+7,16,The Table Polarization,7.6,2014-02-27,tt3507240
+7,17,The Friendship Turbulence,7.4,2014-03-06,tt3521962
+7,18,The Mommy Observation,7.4,2014-03-13,tt3517894
+7,19,The Indecision Amalgamation,8.1,2014-04-03,tt3521964
+7,20,The Relationship Diremption,8.0,2014-04-10,tt3554854
+7,21,The Anything Can Happen Recurrence,7.5,2014-04-24,tt3572170
+7,22,The Proton Transmogrification,7.7,2014-05-01,tt3572176
+7,23,The Gorilla Dissolution,7.8,2014-05-08,tt3572182
+7,24,The Status Quo Combustion,8.0,2014-05-15,tt3572184
+8,1,The Locomotion Interruption,7.2,2014-09-22,tt3596130
+8,2,The Junior Professor Solution,N/A,2014-09-22,tt3807172
+8,3,The First Pitch Insufficiency,7.0,2014-09-29,tt3811812
+8,4,The Hook-up Reverberation,7.2,2014-10-06,tt3811814
+8,5,The Focus Attenuation,7.5,2014-10-13,tt3811816
+8,6,The Expedition Approximation,7.2,2014-10-20,tt3823240
+8,7,The Misinterpretation Agitation,7.7,2014-10-30,tt3823244
+8,8,The Prom Equivalency,8.0,2014-11-06,tt3823242
+8,9,The Septum Deviation,7.5,2014-11-13,tt3823248
+8,10,The Champagne Reflection,7.0,2014-11-20,tt3823250
+8,11,The Clean Room Infiltration,7.4,2014-12-11,tt3823252
+8,12,The Space Probe Disintegration,7.2,2015-01-08,tt3823254
+8,13,The Anxiety Optimization,7.4,2015-01-29,tt3862708
+8,14,The Troll Manifestation,8.0,2015-02-05,tt3862712
+8,15,The Comic Book Store Regeneration,8.0,2015-02-19,tt3862710
+8,16,The Intimacy Acceleration,7.8,2015-02-26,tt3862714
+8,17,The Colonization Application,7.5,2015-03-05,tt3862720
+8,18,The Leftover Thermalization,N/A,2015-03-12,tt3862722
+8,19,The Skywalker Incursion,7.5,2015-04-02,tt3862724
+8,20,The Fortification Implementation,7.5,2015-04-09,tt3862726
+8,21,The Communication Deterioration,7.0,2015-04-16,tt3862728
+8,22,The Graduation Transmission,7.3,2015-04-23,tt3862732
+8,23,The Maternal Combustion,7.5,2015-04-30,tt3862734
+8,24,The Commitment Determination,7.9,2015-05-07,tt3862738
+9,1,The Matrimonial Momentum,6.8,2015-09-21,tt3603346
+9,2,The Separation Oscillation,7.3,2015-09-28,tt4938690
+9,3,The Bachelor Party Corrosion,7.7,2015-10-05,tt4962326
+9,4,The 2003 Approximation,7.4,2015-10-12,tt4995126
+9,5,The Perspiration Implementation,7.4,2015-10-19,tt5027380
+9,6,The Helium Insufficiency,7.2,2015-10-26,tt5090816
+9,7,The Spock Resonance,7.9,2015-11-05,tt5073156
+9,8,The Mystery Date Observation,7.9,2015-11-12,tt5117928
+9,9,The Platonic Permutation,7.8,2015-11-19,tt5143500
+9,10,The Earworm Reverberation,8.3,2015-12-10,tt5143508
+9,11,The Opening Night Excitation,9.0,2015-12-17,tt5143516
+9,12,The Sales Call Sublimation,7.4,2016-01-07,tt5273742
+9,13,The Empathy Optimization,7.4,2016-01-14,tt5273740
+9,14,The Meemaw Materialization,7.5,2016-02-04,tt5295650
+9,15,The Valentino Submergence,7.5,2016-02-11,tt5341496
+9,16,The Positive Negative Reaction,7.4,2016-02-18,tt5376678
+9,17,The Celebration Experimentation,7.5,2016-02-25,tt5436356
+9,18,The Application Deterioration,7.5,2016-03-10,tt5497250
+9,19,The Solder Excursion Diversion,7.4,2016-03-31,tt5522908
+9,20,The Big Bear Precipitation,7.4,2016-04-07,tt5586046
+9,21,The Viewing Party Combustion,7.4,2016-04-21,tt5586050
+9,22,The Fermentation Bifurcation,7.4,2016-04-28,tt5597958
+9,23,The Line Substitution Solution,7.4,2016-05-05,tt5597960
+9,24,The Convergence Convergence,7.8,2016-05-12,tt5562854
+10,0,Recap,8.0,2017-08-28,tt10590194
+10,1,The Conjugal Conjecture,7.8,2016-09-19,tt3603372
+10,2,The Military Miniaturization,7.3,2016-09-26,tt5973910
+10,3,The Dependence Transcendence,7.2,2016-10-03,tt5996928
+10,4,The Cohabitation Experimentation,7.9,2016-10-10,tt6062772
+10,5,The Hot Tub Contamination,7.4,2016-10-17,tt6077690
+10,6,The Fetal Kick Catalyst,7.4,2016-10-27,tt5825290
+10,7,The Veracity Elasticity,7.9,2016-11-03,tt6186420
+10,8,The Brain Bowl Incubation,8.0,2016-11-10,tt6189462
+10,9,The Geology Elevation,7.4,2016-11-17,tt6214960
+10,10,The Property Division Collision,7.3,2016-12-01,tt6255718
+10,11,The Birthday Synchronicity,7.5,2016-12-15,tt6255770
+10,12,The Holiday Summation,7.3,2017-01-05,tt6320950
+10,13,The Romance Recalibration,6.9,2017-01-19,tt6337212
+10,14,The Emotion Detection Automation,7.2,2017-02-02,tt6414316
+10,15,The Locomotion Reverberation,7.3,2017-02-09,tt6438684
+10,16,The Allowance Evaporation,7.1,2017-02-16,tt6495864
+10,17,The Comic-Con Conundrum,7.4,2017-02-23,tt6527026
+10,18,The Escape Hatch Identification,7.1,2017-03-09,tt6565510
+10,19,The Collaboration Fluctuation,N/A,2017-03-30,tt6565514
+10,20,The Recollection Dissipation,7.2,2017-04-06,tt6565516
+10,21,The Separation Agitation,7.2,2017-04-13,tt6565524
+10,22,The Cognition Regeneration,6.8,2017-04-27,tt6565530
+10,23,The Gyroscopic Collapse,7.1,2017-05-04,tt6706250
+10,24,The Long Distance Dissonance,8.5,2017-05-11,tt6706254
+11,1,The Proposal Proposal,7.5,2017-09-25,tt6673774
+11,2,The Retraction Reaction,7.2,2017-10-02,tt6674506
+11,3,The Relaxation Integration,7.0,2017-10-09,tt6674504
+11,4,The Explosion Implosion,7.1,2017-10-16,tt6674498
+11,5,The Collaboration Contamination,7.3,2017-10-23,tt6674496
+11,6,The Proton Regeneration,7.2,2017-11-02,tt6674494
+11,7,The Geology Methodology,7.4,2017-11-09,tt6674492
+11,8,The Tesla Recoil,7.1,2017-11-16,tt6674490
+11,9,The Bitcoin Entanglement,7.7,2017-11-30,tt6674486
+11,10,The Confidence Erosion,7.3,2017-12-07,tt6674480
+11,11,The Celebration Reverberation,7.1,2017-12-14,tt6674476
+11,12,The Matrimonial Metric,7.4,2018-01-04,tt6674472
+11,13,The Solo Oscillation,7.2,2018-01-11,tt6674468
+11,14,The Separation Triangulation,7.2,2018-01-18,tt6674466
+11,15,The Novelization Correlation,7.5,2018-02-01,tt6674462
+11,16,The Neonatal Nomenclature,7.1,2018-03-01,tt6674448
+11,17,The Athenaeum Allocation,6.8,2018-03-08,tt6674452
+11,18,The Gates Excitation,7.1,2018-03-29,tt6674456
+11,19,The Tenant Disassociation,7.2,2018-04-05,tt6674454
+11,20,The Reclusive Potential,7.1,2018-04-12,tt6674434
+11,21,The Comet Polarization,7.4,2018-04-19,tt6674432
+11,22,The Monetary Insufficiency,7.2,2018-04-26,tt6674428
+11,23,The Sibling Realignment,7.7,2018-05-03,tt6674424
+11,24,The Bow Tie Asymmetry,9.0,2018-05-10,tt6674430
+12,1,The Conjugal Configuration,7.2,2018-09-24,tt6673778
+12,2,The Wedding Gift Wormhole,7.6,2018-09-27,tt6674688
+12,3,The Procreation Calculation,7.2,2018-10-04,tt6674692
+12,4,The Tam Turbulence,7.0,2018-10-11,tt6674690
+12,5,The Planetarium Collision,6.8,2018-10-18,tt6674694
+12,6,The Imitation Perturbation,8.2,2018-10-25,tt6674704
+12,7,The Grant Allocation Derivation,7.3,2018-11-01,tt6674696
+12,8,The Consummation Deviation,7.3,2018-11-08,tt6674702
+12,9,The Citation Negation,7.2,2018-11-15,tt6674698
+12,10,The VCR Illumination,7.4,2018-12-06,tt6674710
+12,11,The Paintball Scattering,7.3,2019-01-03,tt6674706
+12,12,The Propagation Proposition,7.1,2019-01-10,tt6674708
+12,13,The Confirmation Polarization,7.1,2019-01-17,tt6674714
+12,14,The Meteorite Manifestation,7.1,2019-01-31,tt6674712
+12,15,The Donation Oscillation,7.4,2019-02-07,tt6674716
+12,16,The D & D Vortex,7.9,2019-02-21,tt6674718
+12,17,The Conference Valuation,7.1,2019-03-07,tt6674726
+12,18,The Laureate Accumulation,7.1,2019-04-04,tt6674724
+12,19,The Inspiration Deprivation,7.0,2019-04-18,tt6674720
+12,20,The Decision Reverberation,7.1,2019-04-25,tt6674728
+12,21,The Plagiarism Schism,7.2,2019-05-02,tt6674732
+12,22,The Maternal Conclusion,7.9,2019-05-09,tt6674730
+12,23,The Change Constant,9.0,2019-05-16,tt6674734
+12,24,The Stockholm Syndrome,9.5,2019-05-16,tt6674736
