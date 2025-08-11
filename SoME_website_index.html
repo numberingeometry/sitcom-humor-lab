@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sitcom Humor Lab — SoME MVP</title>
+  <meta name="description" content="Quantifying sitcom humor: ratings trends, joke density, and sentiment — SoME 2025 MVP." />
+  <!-- Plotly CDN -->
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" defer></script>
+  <style>
+    :root {
+      --bg: #0b0f17; --card:#121826; --ink:#e7eefc; --muted:#92a2c6; --brand:#6aa6ff; --accent:#ffc85a;
+    }
+    html, body {background: var(--bg); color: var(--ink); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; margin:0;}
+    .wrap {max-width: 1100px; margin: 0 auto; padding: 24px;}
+    header {display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap; margin-bottom: 12px;}
+    .title {font-size: clamp(20px, 3vw, 32px); font-weight: 800; letter-spacing: .2px;}
+    .badge {background: #1b2436; color: var(--brand); border:1px solid #1f2a44; padding:6px 10px; border-radius: 999px; font-size: 12px;}
+    .card {background: var(--card); border:1px solid #1f2a44; border-radius: 16px; padding:18px; box-shadow: 0 6px 30px rgba(0,0,0,.25);}
+    .grid {display:grid; grid-template-columns: 1fr; gap: 16px;}
+    @media (min-width: 960px){ .grid-2 {grid-template-columns: 1.2fr .8fr;} }
+    h2 {font-size: 18px; margin: 0 0 8px 0}
+    p, li {color: var(--muted); line-height: 1.6}
+    .controls {display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .control {display:flex; flex-direction:column; gap:6px; font-size: 13px}
+    input[type="file"], input[type="number"], select {background:#0e1524; color:var(--ink); border:1px solid #283552; border-radius:10px; padding:8px 10px}
+    .legend {font-size:12px; color:#a6b4d6}
+    .notice {background:#0d1b2e; border:1px dashed #2c3f66; color:#b9c8ea; border-radius:12px; padding:12px}
+    footer {opacity:.7; font-size:13px; margin: 24px 0 40px}
+    a {color: var(--brand); text-decoration: none}
+    a:hover {text-decoration: underline}
+    details {background:#0e1626; border:1px solid #213152; border-radius:12px; padding:10px 14px}
+    summary {cursor:pointer; font-weight:600}
+    .mono {font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title">Sitcom Humor Lab — SoME MVP</div>
+      <div class="badge">Demo · Static site · No backend</div>
+    </header>
+
+    <div class="grid grid-2">
+      <section class="card">
+        <h2>Figure 1 · Ratings Over Time</h2>
+        <p>Interactive IMDb episode ratings. Toggle smoothing to illustrate the idea of a moving average (educational beat: noise vs. signal).</p>
+        <div class="controls" style="margin:10px 0 12px">
+          <div class="control">
+            <label class="legend">Ratings CSV path</label>
+            <input id="ratingsPath" class="mono" value="data/processed/imdb_ratings.csv" />
+          </div>
+          <div class="control">
+            <label class="legend">Smoothing window (episodes)</label>
+            <input id="maWindow" type="number" min="1" max="15" step="1" value="5" />
+          </div>
+          <button id="btnRatings" style="background:var(--brand); color:#0a0f18; border:none; padding:10px 12px; border-radius:10px; font-weight:700">Load & Plot</button>
+        </div>
+        <div id="chartRatings" style="height:460px"></div>
+        <div id="chartRatingsFallback" class="notice" style="display:none">Couldn’t load <code>imdb_ratings.csv</code>. If you haven’t generated it yet, run:<br>
+          <span class="mono">python scripts/fetch_imdb_ratings.py --imdb-id tt0898266 --out data/processed/imdb_ratings.csv</span><br><br>
+          Fallback image (if present): <code>docs/figures/ratings_trend.png</code>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>Educational Notes</h2>
+        <details open>
+          <summary>Moving Average (Smoothing)</summary>
+          <p>A moving average of width <span class="mono">k</span> replaces each point by the average of its <span class="mono">k</span> neighbors. Larger <span class="mono">k</span> reduces noise but can blur local changes (bias–variance trade‑off).</p>
+        </details>
+        <details style="margin-top:8px">
+          <summary>Normalization</summary>
+          <p>When we count “jokes,” we normalize by runtime (events per minute) so episodes are comparable even if runtimes differ.</p>
+        </details>
+        <details style="margin-top:8px">
+          <summary>Correlation ≠ Causation</summary>
+          <p>Correlations show co‑movement; they don’t prove that jokes cause ratings to rise. In later phases we’ll add controls and experiments.</p>
+        </details>
+      </aside>
+    </div>
+
+    <section class="card" style="margin-top:16px">
+      <h2>Figure 2 · Joke Density vs Ratings</h2>
+      <p>Scatter using a pilot file (<code>data/processed/pilot_joke_metrics.csv</code>) that includes <em>either</em> SDH laughter events per minute <em>or</em> a transcript punchline proxy per minute.</p>
+      <div class="controls" style="margin:10px 0 12px">
+        <div class="control">
+          <label class="legend">Pilot metrics CSV path</label>
+          <input id="metricsPath" class="mono" value="data/processed/pilot_joke_metrics.csv" />
+        </div>
+        <div class="control">
+          <label class="legend">X‑axis metric</label>
+          <select id="xMetric">
+            <option value="sdh_events_per_min">SDH laughter events / min</option>
+            <option value="punchlines_per_min">Punchline proxy / min</option>
+          </select>
+        </div>
+        <button id="btnMetrics" style="background:var(--brand); color:#0a0f18; border:none; padding:10px 12px; border-radius:10px; font-weight:700">Load & Plot</button>
+      </div>
+      <div id="chartScatter" style="height:420px"></div>
+      <div id="chartScatterFallback" class="notice" style="display:none">Couldn’t find <code>pilot_joke_metrics.csv</code>. Create it from your pilot notebook and export columns: <span class="mono">season,episode,title,imdb_rating,sdh_events_per_min,punchlines_per_min</span>.</div>
+    </section>
+
+    <section class="card" style="margin-top:16px">
+      <h2>About & How To Reproduce</h2>
+      <ul>
+        <li>Repo aims to generalize beyond one show; **data/processed/imdb_ratings.csv** is generated via OMDb.</li>
+        <li>Joke density is computed from SDH tags (weak labels) or transcript heuristics; both are normalized by runtime.</li>
+        <li>See <span class="mono">notebooks/02_pilot_joke_density.ipynb</span> for the pilot pipeline; export a small CSV for this page.</li>
+      </ul>
+      <div class="notice">Deploy on GitHub Pages: push this file as <span class="mono">index.html</span> at repo root → Settings → Pages → Deploy from <em>main / root</em>.</div>
+    </section>
+
+    <footer>
+      SoME 2025 · Sitcom Humor Lab · <span class="mono">v0.1</span> — Add sentiment & character networks next.
+    </footer>
+  </div>
+
+  <script>
+    // Simple CSV parser: header line + comma separated (no quoted commas for MVP)
+    function parseCSV(text){
+      const lines = text.trim().split(/\r?\n/);
+      const header = lines[0].split(',').map(s=>s.trim());
+      return lines.slice(1).map(line=>{
+        const cols = line.split(',');
+        const obj = {}; header.forEach((h,i)=> obj[h] = (cols[i] ?? '').trim());
+        return obj;
+      });
+    }
+    function movingAverage(arr, k){
+      const out = new Array(arr.length).fill(null);
+      if(k<=1) return arr.slice();
+      const half = Math.floor(k/2);
+      for(let i=0;i<arr.length;i++){
+        const s = Math.max(0, i-half), e = Math.min(arr.length-1, i+half);
+        const window = arr.slice(s, e+1).filter(v=> v!=null && !isNaN(v));
+        out[i] = window.length ? window.reduce((a,b)=>a+b,0)/window.length : null;
+      }
+      return out;
+    }
+
+    async function fetchCSV(path){
+      const res = await fetch(path);
+      if(!res.ok) throw new Error('Fetch failed: '+res.status);
+      const text = await res.text();
+      return parseCSV(text);
+    }
+
+    function toNumber(v){ const x = parseFloat(v); return isNaN(x)? null : x; }
+
+    async function plotRatings(){
+      const path = document.getElementById('ratingsPath').value.trim();
+      const k = Math.max(1, parseInt(document.getElementById('maWindow').value||'5',10));
+      const fallback = document.getElementById('chartRatingsFallback');
+      try{
+        const rows = await fetchCSV(path);
+        // Clean + derive
+        const data = rows.map(r=> ({
+          season: parseInt(r.season,10),
+          episode: parseInt(r.episode,10),
+          title: r.title,
+          rating: toNumber(r.imdb_rating),
+        })).filter(r=> r.rating!=null).sort((a,b)=> (a.season-b.season)|| (a.episode-b.episode));
+        data.forEach((d,i)=> d.idx = i+1);
+
+        // Build traces by season
+        const seasons = [...new Set(data.map(d=> d.season))];
+        const traces = seasons.map(s=>{
+          const sub = data.filter(d=> d.season===s);
+          return {
+            x: sub.map(d=> d.idx),
+            y: sub.map(d=> d.rating),
+            mode: 'lines+markers',
+            name: 'S'+s,
+            hovertemplate: 'S'+s+ 'E%{customdata[0]} · %{customdata[1]}<br>Rating: %{y}<extra></extra>',
+            customdata: sub.map(d=> [d.episode, d.title])
+          };
+        });
+
+        // Moving average overlay (global)
+        const mav = movingAverage(data.map(d=> d.rating), k);
+        traces.push({
+          x: data.map(d=> d.idx), y: mav,
+          mode: 'lines', name: `MA(${k})`, line: {width: 3, dash: 'dot'}
+        });
+
+        const layout = {
+          paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)',
+          font: {color: '#e7eefc'},
+          margin: {l:50, r:10, t:30, b:40},
+          xaxis: {title: 'Episode (global index)'},
+          yaxis: {title: 'IMDb Rating', rangemode:'tozero'},
+          legend: {orientation: 'h'}
+        };
+        Plotly.newPlot('chartRatings', traces, layout, {displayModeBar:false});
+        fallback.style.display='none';
+      }catch(err){
+        console.warn('Ratings plot failed', err);
+        document.getElementById('chartRatings').innerHTML='';
+        document.getElementById('chartRatingsFallback').style.display='block';
+      }
+    }
+
+    async function plotScatter(){
+      const path = document.getElementById('metricsPath').value.trim();
+      const xkey = document.getElementById('xMetric').value;
+      const fb = document.getElementById('chartScatterFallback');
+      try{
+        const rows = await fetchCSV(path);
+        const data = rows.map(r=> ({
+          season: parseInt(r.season,10),
+          episode: parseInt(r.episode,10),
+          title: r.title,
+          imdb_rating: toNumber(r.imdb_rating),
+          sdh_events_per_min: toNumber(r.sdh_events_per_min),
+          punchlines_per_min: toNumber(r.punchlines_per_min)
+        })).filter(r=> r.imdb_rating!=null && r[xkey]!=null);
+
+        const trace = {
+          x: data.map(d=> d[xkey]),
+          y: data.map(d=> d.imdb_rating),
+          mode: 'markers',
+          hovertemplate: 'S%{customdata[0]}E%{customdata[1]} · %{customdata[2]}<br>'+xkey+': %{x}<br>Rating: %{y}<extra></extra>',
+          customdata: data.map(d=> [d.season, d.episode, d.title])
+        };
+
+        const layout = {
+          paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)',
+          font: {color: '#e7eefc'},
+          margin: {l:50, r:10, t:30, b:40},
+          xaxis: {title: xkey}, yaxis: {title: 'IMDb Rating'}
+        };
+        Plotly.newPlot('chartScatter', [trace], layout, {displayModeBar:false});
+        fb.style.display='none';
+      }catch(err){
+        console.warn('Scatter plot failed', err);
+        document.getElementById('chartScatter').innerHTML='';
+        fb.style.display='block';
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('btnRatings').addEventListener('click', plotRatings);
+      document.getElementById('btnMetrics').addEventListener('click', plotScatter);
+      // Try auto-load ratings on first paint
+      plotRatings();
+    });
+  </script>
+</body>
+</html>
