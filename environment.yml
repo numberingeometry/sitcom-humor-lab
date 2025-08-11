@@ -1,0 +1,21 @@
+name: sitcom-humor-lab
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - jupyterlab
+  - ipykernel
+  - black
+  - flake8
+  - pytest
+  - pip:
+      - pandas
+      - numpy
+      - matplotlib
+      - requests
+      - python-dotenv
+      - vaderSentiment
+      - nltk
+      - seaborn
+      - plotly
