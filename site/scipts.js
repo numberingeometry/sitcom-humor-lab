@@ -1,10 +1,7 @@
-// script.js
+// script.js (site/ folder version)
 // Client-side loader for CSVs and Plotly charts
-// Expected files (relative to site root / repo):
-//  - data/processed/imdb_ratings.csv
-//  - data/processed/pilot_features.csv   (optional; columns: season,episode,jokes_per_min,imdb_rating)
+// Expected CSVs are one folder up in ../data/processed/
 
-// --- small, robust CSV parser (handles quotes/commas/newlines) ---
 function parseCSV(text) {
   const rows = [];
   let row = [];
@@ -13,9 +10,8 @@ function parseCSV(text) {
 
   for (let i = 0; i < text.length; i++) {
     const c = text[i];
-
     if (c === '"') {
-      if (inside && text[i + 1] === '"') { // escaped quote
+      if (inside && text[i + 1] === '"') {
         cur += '"';
         i++;
       } else {
@@ -25,7 +21,6 @@ function parseCSV(text) {
       row.push(cur);
       cur = '';
     } else if ((c === '\n' || c === '\r') && !inside) {
-      // handle CRLF
       if (c === '\r' && text[i + 1] === '\n') i++;
       row.push(cur);
       rows.push(row);
@@ -53,7 +48,6 @@ async function loadCSV(path) {
     .map(r => Object.fromEntries(r.map((v, i) => [header[i], v])));
 }
 
-// --- helpers ---
 function movingAverage(arr, window = 5) {
   const out = Array(arr.length).fill(null);
   for (let i = 0; i < arr.length; i++) {
@@ -64,22 +58,18 @@ function movingAverage(arr, window = 5) {
   return out;
 }
 
-// --- charts ---
 async function buildRatingsTrend() {
   const el = document.getElementById('ratings-trend');
   try {
-    const data = await loadCSV('data/processed/imdb_ratings.csv');
+    const data = await loadCSV('../data/processed/imdb_ratings.csv');
 
-    // sort by season, episode
     data.sort((a, b) =>
       (Number(a.season) - Number(b.season)) ||
       (Number(a.episode) - Number(b.episode))
     );
 
-    // global episode index
     data.forEach((d, i) => d.ep_index = i + 1);
 
-    // traces per season
     const seasons = [...new Set(data.map(d => d.season))].sort((a, b) => Number(a) - Number(b));
     const traces = seasons.map(s => {
       const sub = data.filter(d => d.season === s && d.imdb_rating && d.imdb_rating !== 'N/A');
@@ -93,7 +83,6 @@ async function buildRatingsTrend() {
       };
     });
 
-    // moving average across all episodes (ignoring N/A)
     const allY = data.map(d => (d.imdb_rating === 'N/A' ? null : Number(d.imdb_rating)));
     const ma = movingAverage(allY, 5);
     const maTrace = {
@@ -121,9 +110,8 @@ async function buildRatingsTrend() {
 async function buildJokeScatter() {
   const el = document.getElementById('joke-scatter');
   try {
-    // Optional file produced by your pilot notebook
-    const feats = await loadCSV('data/processed/pilot_features.csv');
-    // expect: season,episode,jokes_per_min,imdb_rating
+    const feats = await loadCSV('../data/processed/pilot_features.csv');
+
     feats.sort((a, b) =>
       (Number(a.season) - Number(b.season)) ||
       (Number(a.episode) - Number(b.episode))
